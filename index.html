@@ -2,177 +2,252 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arthur Magalhães · AI Builder</title>
-<meta name="description" content="Portfólio de Arthur Magalhães, AI Builder: automação de QA, agentes de IA, cérebros para empresas e ferramentas internas com IA.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfólio de AI Builder do Arthur Magalhães: Projeto Alfredo, COREX Studios, LeadStream e orquestração de agentes.">
+<title>Arthur Magalhães — Portfólio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500;112,700;125,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
-  :root{
-    --bg:#ffffff; --panel:#f8fafc; --ink:#111827; --mute:#4b5563; --soft:#9ca3af;
-    --rule:#e5e7eb; --accent:#1d4ed8; --tag:#eff6ff;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#0b1120; --panel:#111a2e; --ink:#e5e7eb; --mute:#9ca3af; --soft:#6b7280;
-           --rule:#1f2a44; --accent:#60a5fa; --tag:#172554; }
-  }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ -webkit-text-size-adjust:100%; }
-  body{
-    background:var(--bg); color:var(--ink);
-    font-family:Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size:16px; line-height:1.6;
-  }
-  a{ color:var(--accent); text-decoration:none; }
-  a:hover{ text-decoration:underline; }
-  .wrap{ max-width:760px; margin:0 auto; padding:56px 20px 48px; }
+/* Layout: dark-first brutalist build log — heavy expanded display type, hard 2px rules, one column of project "spec sheets" with problem/solution/tools/result rows. */
+:root{
+  --bg:#0e0e12; --panel:#16161c; --fg:#ecebe6; --mute:#9a99a3; --line:#ecebe6; --accent:#8c8cff; --on-accent:#0e0e12;
+  --f-display:"Archivo","Inter","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Inter","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"JetBrains Mono","DejaVu Sans Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){
+  --bg:#f4f4f1; --panel:#ffffff; --fg:#0e0e12; --mute:#55545e; --line:#0e0e12; --accent:#2a2aff; --on-accent:#ffffff; color-scheme:light; } }
+:root[data-theme="light"]{
+  --bg:#f4f4f1; --panel:#ffffff; --fg:#0e0e12; --mute:#55545e; --line:#0e0e12; --accent:#2a2aff; --on-accent:#ffffff; color-scheme:light; }
 
-  header h1{ font-size:clamp(30px, 6vw, 40px); line-height:1.1; letter-spacing:-.02em; }
-  .role{ margin-top:6px; font-size:18px; font-weight:600; color:var(--accent); }
-  .intro{ margin-top:16px; color:var(--mute); max-width:62ch; }
-  .links{ margin-top:16px; display:flex; flex-wrap:wrap; gap:8px 18px; font-size:15px; }
+*{ box-sizing:border-box; }
+body{ background:var(--bg); color:var(--fg); font-family:var(--f-body); font-size:16px; line-height:1.55; margin:0; }
+.wrap{ max-width:980px; margin:0 auto; padding-block:48px 72px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
+a{ color:inherit; }
+a:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
 
-  .stats{ margin-top:32px; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; }
-  .stat{ background:var(--panel); border:1px solid var(--rule); border-radius:10px; padding:14px 16px; }
-  .stat b{ display:block; font-size:22px; line-height:1.2; }
-  .stat span{ font-size:14px; color:var(--mute); }
+.eyebrow{ font-family:var(--f-mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--mute); }
+.hero{ border-bottom:2px solid var(--line); padding-bottom:28px; display:grid; gap:18px; }
+h1{ font-family:var(--f-display); font-stretch:125%; font-weight:900; text-transform:uppercase;
+  font-size:clamp(40px, 8.4vw, 92px); line-height:.88; letter-spacing:-.02em; margin:0; text-wrap:balance; }
+.pitch{ font-size:clamp(18px, 2.3vw, 22px); line-height:1.45; max-width:62ch; margin:0; }
+.pitch mark{ background:var(--accent); color:var(--on-accent); padding:0 .25em; }
+.links{ display:flex; flex-wrap:wrap; gap:10px; }
+.btn{ font-family:var(--f-mono); font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; text-decoration:none;
+  border:2px solid var(--line); padding:9px 14px; display:inline-flex; gap:8px; align-items:center; }
+.btn:hover{ background:var(--fg); color:var(--bg); }
+.facts{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); border:2px solid var(--line); }
+.facts > div{ padding:14px 16px; border-right:2px solid var(--line); min-width:0; }
+.facts > div:last-child{ border-right:0; }
+.facts b{ display:block; font-family:var(--f-display); font-stretch:112%; font-weight:700; font-size:20px; line-height:1.15; }
+.facts span{ font-size:14px; color:var(--mute); }
 
-  section{ margin-top:44px; }
-  h2{ font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--accent);
-      padding-bottom:8px; border-bottom:1px solid var(--rule); margin-bottom:20px; }
+.sec-h{ display:flex; align-items:center; gap:14px; margin:56px 0 18px; }
+.sec-h h2{ font-family:var(--f-mono); font-size:13px; letter-spacing:.16em; text-transform:uppercase; margin:0; font-weight:700; }
+.sec-h::after{ content:""; flex:1; border-top:2px solid var(--line); }
 
-  .card{ border:1px solid var(--rule); border-radius:12px; padding:20px 22px; margin-bottom:16px; background:var(--bg); }
-  .card-head{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 12px; }
-  .card h3{ font-size:19px; letter-spacing:-.01em; }
-  .ctx{ font-size:14px; color:var(--mute); }
-  .tag{ display:inline-block; margin-left:8px; padding:1px 8px; border-radius:999px; background:var(--tag);
-        color:var(--accent); font-size:12px; font-weight:600; vertical-align:2px; }
-  .card p{ margin-top:10px; color:var(--mute); }
-  .card ul{ list-style:none; margin-top:10px; }
-  .card li{ position:relative; padding-left:16px; margin-top:6px; }
-  .card li::before{ content:""; position:absolute; left:2px; top:.7em; width:6px; height:6px; border-radius:50%; background:var(--accent); }
-  .tools{ margin-top:14px; display:flex; flex-wrap:wrap; gap:6px; }
-  .tools span{ font-size:12.5px; padding:2px 8px; border:1px solid var(--rule); border-radius:6px; color:var(--mute); }
+.proj{ border:2px solid var(--line); background:var(--panel); margin-bottom:22px; }
+.proj.feature{ border-color:var(--accent); box-shadow:8px 8px 0 var(--accent); }
+.ph{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:10px 18px; padding:20px 22px 16px; border-bottom:2px solid var(--line); }
+.proj.feature .ph{ border-bottom-color:var(--accent); }
+.ph h3{ font-family:var(--f-display); font-stretch:112%; font-weight:700; font-size:clamp(22px, 3.2vw, 30px); line-height:1.05; margin:0; letter-spacing:-.01em; }
+.ph .ctx{ display:block; margin-top:6px; font-size:14px; color:var(--mute); font-family:var(--f-body); font-stretch:100%; font-weight:500; letter-spacing:0; }
+.chip{ font-family:var(--f-mono); font-size:11.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  border:2px solid var(--line); padding:3px 8px; white-space:nowrap; }
+.chip.live{ background:var(--accent); color:var(--on-accent); border-color:var(--accent); }
+.chip.doc{ border-style:dashed; color:var(--mute); }
 
-  .xp{ display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid var(--rule); }
-  .xp:last-child{ border-bottom:0; }
-  .xp .when{ color:var(--mute); font-size:14px; white-space:nowrap; }
+.rows{ display:grid; }
+.row{ display:grid; grid-template-columns:150px minmax(0,1fr); border-bottom:1px solid color-mix(in srgb, var(--line) 28%, transparent); }
+.row:last-child{ border-bottom:0; }
+.row .k{ font-family:var(--f-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); padding:14px 22px; }
+.row .v{ padding:12px 22px 14px 0; min-width:0; }
+.row .v p{ margin:0; max-width:68ch; }
+.row ul{ margin:0; padding-left:0; list-style:none; display:grid; gap:6px; }
+.row li{ position:relative; padding-left:18px; max-width:68ch; }
+.row li::before{ content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; background:var(--fg); }
+.proj.feature .row li::before{ background:var(--accent); }
+.tools{ display:flex; flex-wrap:wrap; gap:6px; }
+.tools span{ font-family:var(--f-mono); font-size:12px; border:1px solid var(--line); padding:2px 7px; }
+.fill{ border:1px dashed var(--accent); color:var(--accent); padding:0 6px; font-family:var(--f-mono); font-size:13px; white-space:nowrap; }
+.note{ font-size:13.5px; color:var(--mute); margin-top:8px; }
 
-  .how{ display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; }
-  .how div{ background:var(--panel); border:1px solid var(--rule); border-radius:10px; padding:14px 16px; }
-  .how b{ display:block; }
-  .how span{ font-size:14.5px; color:var(--mute); }
+.sub{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:0; }
+.sub > article{ padding:18px 22px 20px; border-bottom:1px solid color-mix(in srgb, var(--line) 28%, transparent); min-width:0; }
+.sub > article:nth-child(odd){ border-right:1px solid color-mix(in srgb, var(--line) 28%, transparent); }
+.sub h4{ font-family:var(--f-display); font-stretch:112%; font-size:19px; margin:0 0 6px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.sub p{ margin:0 0 10px; font-size:15px; }
 
-  footer{ margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); font-size:13px; color:var(--soft); }
+.grid3{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px; }
+.grid3 .proj{ margin:0; display:flex; flex-direction:column; }
+.grid3 .ph{ padding:16px 18px 12px; }
+.grid3 .ph h3{ font-size:22px; }
+.grid3 .body{ padding:14px 18px 18px; display:grid; gap:10px; font-size:15px; }
+.grid3 .body p{ margin:0; }
+.grid3 .lbl{ font-family:var(--f-mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--mute); display:block; margin-bottom:2px; }
 
-  .sub{ display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; margin-top:16px; }
-  .sub div{ background:var(--panel); border:1px solid var(--rule); border-radius:10px; padding:14px 16px; }
-  .sub h4{ font-size:15.5px; }
-  .sub p{ margin-top:6px; font-size:14.5px; }
+.how{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); border:2px solid var(--line); }
+.how > div{ padding:16px 18px; border-right:2px solid var(--line); min-width:0; }
+.how > div:last-child{ border-right:0; }
+.how b{ font-family:var(--f-display); font-stretch:112%; font-size:18px; display:block; margin-bottom:4px; }
+.how p{ margin:0; font-size:14.5px; color:var(--mute); }
 
-  @media (max-width:600px){
-    .wrap{ padding:36px 16px 40px; }
-    .stats, .how, .sub{ grid-template-columns:1fr; }
-    .xp{ flex-direction:column; gap:0; }
-  }
+footer{ margin-top:56px; border-top:2px solid var(--line); padding-top:18px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; font-family:var(--f-mono); font-size:12px; color:var(--mute); letter-spacing:.06em; }
+
+@media (max-width: 760px){
+  .facts, .how{ grid-template-columns:1fr; }
+  .facts > div, .how > div{ border-right:0; border-bottom:2px solid var(--line); }
+  .facts > div:last-child, .how > div:last-child{ border-bottom:0; }
+  .row{ grid-template-columns:1fr; }
+  .row .k{ padding:12px 18px 0; }
+  .row .v{ padding:4px 18px 14px; }
+  .ph{ padding:18px; }
+  .sub{ grid-template-columns:1fr; }
+  .sub > article:nth-child(odd){ border-right:0; }
+  .grid3{ grid-template-columns:1fr; }
+  .proj.feature{ box-shadow:5px 5px 0 var(--accent); }
+}
+@media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+.how.two{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+.how.two > div:nth-child(2n){ border-right:0; }
+.how.two > div:nth-child(-n+2){ border-bottom:2px solid var(--line); }
+@media (max-width: 760px){ .how.two{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
+
 <div class="wrap">
-
-<header>
-  <h1>Arthur Magalhães</h1>
-  <div class="role">AI Builder · automação, agentes e ferramentas internas com IA</div>
-  <p class="intro">Construo com IA ferramentas que outras pessoas usam no dia a dia. Na E&amp;L Produções de Software, criei o Alfredo, automação de testes que já faz parte da rotina do time, e fui promovido do Atendimento a Analista de QA em 3 meses. Na COREX Studios, entregamos sites, agentes de WhatsApp e cérebros de IA para pequenos negócios. Inglês fluente. Domingos Martins/ES, remoto.</p>
-  <div class="links">
-    <a href="https://www.linkedin.com/in/arthurribettm">LinkedIn</a>
-    <a href="https://github.com/arthurribettm">GitHub</a>
-  </div>
-  <div class="stats">
-    <div class="stat"><b>30+ h/semana</b><span>de teste manual devolvidas ao time</span></div>
-    <div class="stat"><b>100+ telas</b><span>testadas sozinho, todos os dias</span></div>
-    <div class="stat"><b>3 meses</b><span>do Atendimento a Analista de QA</span></div>
-  </div>
-</header>
-
-<section>
-  <h2>Projetos com IA</h2>
-
-  <article class="card">
-    <div class="card-head">
-      <h3>Alfredo<span class="tag">Em uso</span></h3>
-      <span class="ctx">E&amp;L Produções de Software · 2026–atual</span>
+  <header class="hero">
+    <div class="eyebrow">Portfólio · AI Builder · Domingos Martins/ES · remoto</div>
+    <h1>Arthur<br>Magalhães</h1>
+    <p class="pitch">Construo com IA ferramentas que outras pessoas usam no dia a dia. Na E&amp;L criei o <mark>Alfredo</mark>, robô de QA que devolve 30+ h/semana ao time. Na COREX Studios, entregamos sites, agentes de WhatsApp e cérebros de IA para pequenos negócios.</p>
+    <div class="facts">
+      <div><b>Analista de QA</b><span>E&amp;L Produções de Software, promovido do Atendimento em 3 meses</span></div>
+      <div><b>Cofundador</b><span>COREX Studios, IA e presença digital para pequenos negócios</span></div>
+      <div><b>Inglês fluente</b><span>Freelancer para clientes no Brasil e no exterior (2022–2025)</span></div>
     </div>
-    <p>A cada versão, o QA repetia à mão o mesmo roteiro de testes. Pedidos de merge e geração de bibliotecas também eram montados manualmente.</p>
-    <ul>
-      <li>Testes E2E escritos com Claude Code + Playwright: o robô percorre 100+ telas, testa 2 servidores todos os dias sem ninguém operar e publica o resultado em um painel web próprio.</li>
-      <li>Cada rodada substitui 3–4 h de teste manual: 30+ h/semana devolvidas ao time.</li>
-      <li>Pedido de merge em um clique na planilha de homologação (Google Apps Script, coberto por 50 testes) e geração automática de bibliotecas.</li>
-    </ul>
-    <div class="tools"><span>Claude Code</span><span>Playwright</span><span>TypeScript</span><span>Google Apps Script</span><span>Webhooks</span></div>
+    <div class="links">
+      <a class="btn" href="https://www.linkedin.com/in/arthurribettm" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/arthurribettm" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </header>
+
+  <div class="sec-h"><h2>Em uso no trabalho</h2></div>
+
+  <article class="proj feature" id="alfredo">
+    <div class="ph">
+      <h3>Projeto Alfredo<span class="ctx">Robô de QA e automações internas · E&amp;L Produções de Software · 2026–atual</span></h3>
+      <span class="chip live">Em uso</span>
+    </div>
+    <div class="rows">
+      <div class="row"><div class="k">Problema</div><div class="v"><p>A cada versão, o QA repetia à mão o mesmo roteiro de testes, de 3 a 4 horas por rodada. Pedidos de merge e geração de bibliotecas também eram montados manualmente.</p></div></div>
+      <div class="row"><div class="k">Solução</div><div class="v"><ul>
+        <li>Robô de testes ponta a ponta escrito com Claude Code e Playwright. Percorre as telas do sistema, testa 2 servidores todos os dias sem ninguém operar e publica o resultado em um painel web próprio.</li>
+        <li>Integração com a planilha de homologação: um botão monta e envia o pedido de merge (Google Apps Script). Também automatizei a geração de bibliotecas.</li>
+      </ul></div></div>
+      <div class="row"><div class="k">Ferramentas</div><div class="v"><div class="tools"><span>Claude Code</span><span>Playwright</span><span>TypeScript</span><span>Google Apps Script</span><span>Webhooks</span></div></div></div>
+      <div class="row"><div class="k">Resultado</div><div class="v"><ul>
+        <li>30+ h/semana de teste manual devolvidas ao time.</li>
+        <li>100+ telas do sistema no roteiro automatizado.</li>
+        <li>Automação do pedido de merge coberta por 50 testes automatizados.</li>
+      </ul><p class="note">Sem código, dados ou nomes de clientes da empresa nesta página.</p></div></div>
+    </div>
   </article>
 
-  <article class="card">
-    <div class="card-head">
-      <h3>COREX Studios</h3>
-      <span class="ctx">Cofundador · atual</span>
+  <div class="sec-h"><h2>COREX Studios · cofundador</h2></div>
+
+  <article class="proj" id="corex">
+    <div class="ph">
+      <h3>COREX Studios<span class="ctx">IA e presença digital para pequenos negócios · cofundador · atual</span></h3>
+      <span class="chip live">Com clientes</span>
     </div>
-    <p>Agência de IA e presença digital para pequenos negócios. Quatro frentes, todas com clientes:</p>
+    <div class="rows">
+      <div class="row"><div class="k">Problema</div><div class="v"><p>Pequeno negócio precisa de presença digital que traga cliente, não só vitrine: agendar sem atrito, responder rápido no WhatsApp, aparecer no Google e nas respostas de IA, e usar IA com o contexto da própria empresa.</p></div></div>
+    </div>
     <div class="sub">
-      <div><h4>Sites com funcionalidade</h4><p>Motor Next.js multi-tenant: cada site novo é uma configuração, não um projeto do zero. Agendamento 24/7 com sinal via Pix para travar o horário. O lead vê o protótipo do próprio site já na ligação de venda.</p></div>
-      <div><h4>Agentes de IA no WhatsApp</h4><p>Atendem os clientes do negócio automaticamente. Funções desenhadas por nicho: agendamento, orçamento, reativação de clientes e resposta a avaliações.</p></div>
-      <div><h4>SEO e GEO</h4><p>Sites preparados para o Google e para respostas de IA: dados estruturados LocalBusiness, nome, endereço e telefone idênticos ao perfil do Google, FAQ com as palavras do cliente e atenção a Core Web Vitals.</p></div>
-      <div><h4>Cérebros de IA (RAG)</h4><p>Base de conhecimento da empresa em Markdown (Obsidian + Drive + Git) que o Claude consulta via MCP. Processos estáveis ficam separados do estado da semana, decisões entram com um comando ("grava") e nenhuma credencial entra no cérebro.</p></div>
+      <article>
+        <h4>Sites com funcionalidade <span class="chip live">Com clientes</span></h4>
+        <p>Motor Next.js multi-tenant: cada site novo é uma configuração, não um projeto do zero. Agendamento 24/7 com sinal via Pix para travar o horário e acabar com o no-show. O lead vê o protótipo do próprio site já na ligação de venda.</p>
+        <div class="tools"><span>Next.js</span><span>Multi-tenant</span><span>Pix</span><span>Claude Code</span></div>
+      </article>
+      <article>
+        <h4>Agentes de IA no WhatsApp <span class="chip live">Com clientes</span></h4>
+        <p>Atendem os clientes do negócio automaticamente, a qualquer hora. Funções desenhadas por nicho: agendamento, orçamento, reativação de clientes e resposta a avaliações.</p>
+        <div class="tools"><span>WhatsApp</span><span>LLM</span><span>Automação</span></div>
+      </article>
+      <article>
+        <h4>SEO e GEO</h4>
+        <p>Sites preparados para o Google e para respostas de IA (ChatGPT, AI Overviews): dados estruturados LocalBusiness, nome, endereço e telefone idênticos ao perfil do Google, FAQ com as palavras do cliente e atenção a Core Web Vitals.</p>
+        <div class="tools"><span>Schema.org</span><span>Google Business Profile</span><span>Core Web Vitals</span></div>
+      </article>
+      <article>
+        <h4>Cérebros de IA (RAG)</h4>
+        <p>Base de conhecimento da empresa em Markdown (Obsidian + Drive + Git) que o Claude consulta via MCP. Processos estáveis ficam separados do estado da semana, decisões entram com um comando ("grava") e nenhuma credencial entra no cérebro.</p>
+        <div class="tools"><span>Claude</span><span>MCP</span><span>Obsidian</span><span>Git</span></div>
+      </article>
     </div>
-    <div class="tools"><span>Next.js</span><span>Pix</span><span>WhatsApp</span><span>Schema.org</span><span>Claude</span><span>MCP</span><span>Obsidian</span></div>
   </article>
 
-  <article class="card">
-    <div class="card-head">
-      <h3>LeadStream<span class="tag">Piloto</span></h3>
-      <span class="ctx">COREX Studios</span>
+  <article class="proj" id="leadstream">
+    <div class="ph">
+      <h3>LeadStream<span class="ctx">Prospecção B2B com IA · COREX Studios</span></h3>
+      <span class="chip">Piloto</span>
     </div>
-    <p>Prospecção B2B com IA: do CNPJ até a mensagem de abordagem pronta.</p>
-    <ul>
-      <li><b>17 nós no n8n.</b> Filtra empresas por capital, tempo de abertura e CNPJ válido, remove sócios que são pessoa jurídica e enriquece cada sócio pela BrasilAPI, com retry e timeout.</li>
-      <li><b>Qualificação com Claude.</b> Prompt com cache dá nota de 0 a 100, justifica a nota e escreve a mensagem de abordagem e o canal sugerido.</li>
-      <li><b>Roteamento.</b> 70+ vira lead quente, 40–69 morno, abaixo de 40 é descartado. Blacklist LGPD antes de qualquer contato e entrega numa planilha no Google Sheets.</li>
-      <li>Piloto com um cliente do mercado imobiliário de alto padrão, pausado quando a revisão jurídica vetou a fonte dos dados de contato.</li>
-    </ul>
-    <div class="tools"><span>n8n</span><span>Claude API</span><span>Prompt caching</span><span>BrasilAPI</span><span>Google Sheets</span></div>
+    <div class="rows">
+      <div class="row"><div class="k">Problema</div><div class="v"><p>Prospecção B2B lead por lead: achar o sócio certo, decidir se vale a abordagem e escrever a mensagem, tudo à mão.</p></div></div>
+      <div class="row"><div class="k">Solução</div><div class="v"><ul>
+        <li>Workflow de 17 nós no n8n. Filtra empresas por capital, tempo de abertura e CNPJ válido, remove sócios pessoa jurídica e enriquece cada sócio pela BrasilAPI, com retry e timeout.</li>
+        <li>Qualificação com Claude: prompt com cache dá nota de 0 a 100, justifica a nota e escreve a mensagem de abordagem e o canal sugerido.</li>
+        <li>Roteamento por nota: 70+ quente, 40–69 morno, abaixo de 40 descarte. Blacklist LGPD antes de qualquer contato e entrega numa planilha no Google Sheets.</li>
+      </ul></div></div>
+      <div class="row"><div class="k">Ferramentas</div><div class="v"><div class="tools"><span>n8n</span><span>Claude API</span><span>Prompt caching</span><span>BrasilAPI</span><span>Google Sheets</span></div></div></div>
+      <div class="row"><div class="k">Resultado</div><div class="v"><p>Piloto com um cliente do mercado imobiliário de alto padrão. Pausado quando a revisão jurídica vetou a fonte dos dados de contato.</p></div></div>
+    </div>
   </article>
 
-  <article class="card">
-    <div class="card-head">
-      <h3>Orquestração de agentes</h3>
-    </div>
-    <ul>
-      <li><b>Agente certo para cada tarefa:</b> divido o trabalho entre Claude Code, Codex, Ollama e Kimi conforme o tipo de tarefa. Estou montando uma IA local com Ollama e participo do projeto de IA própria da E&amp;L.</li>
-      <li><b>Estação de IA 24/7:</b> máquina sempre ligada. Peço a tarefa pelo Telegram, o agente aciona o Claude Code, executa e versiona o resultado no Git/GitHub.</li>
-      <li><b>Hub-and-spoke:</b> um chat central do Claude recebe a demanda e distribui para chats especializados por meio de skills, todos lendo o mesmo cérebro.</li>
-    </ul>
-    <div class="tools"><span>Claude Code</span><span>Codex</span><span>Ollama</span><span>Kimi</span><span>Telegram</span><span>Git</span></div>
-  </article>
-</section>
+  <div class="sec-h"><h2>Orquestração de agentes</h2></div>
 
-<section>
-  <h2>Experiência</h2>
-  <div class="xp"><div><b>Analista de QA</b> · E&amp;L Produções de Software<br><span class="ctx">Builds com Maven, testes funcionais, homologação e escalonamento de defeitos. Promovido do Atendimento ao Cliente (mar–jun/2026).</span></div><div class="when">jun/2026 – atual</div></div>
-  <div class="xp"><div><b>Cofundador</b> · COREX Studios<br><span class="ctx">IA e presença digital para pequenos negócios.</span></div><div class="when">atual</div></div>
-  <div class="xp"><div><b>Freelancer</b> · design, social media e conteúdo com IA<br><span class="ctx">Clientes no Brasil e no exterior, com atendimento em inglês.</span></div><div class="when">2022 – 2025</div></div>
-  <div class="xp"><div><b>Cofundador</b> · Fit Supply<br><span class="ctx">E-commerce de suplementos.</span></div><div class="when">2021 – 2024</div></div>
-</section>
-
-<section>
-  <h2>Meu sistema de trabalho com IA</h2>
-  <div class="how">
-    <div><b>Segundo cérebro</b><span>Um vault em Markdown com o contexto de todos os meus projetos: decisões, estado de cada frente e processos. Toda sessão de IA começa lendo o cérebro e termina gravando o que mudou, então o contexto não morre com o chat.</span></div>
-    <div><b>Várias IAs no mesmo problema</b><span>Antes de construir, passo a ideia por Claude, Codex, Kimi e Ollama: uma propõe, outra critica, outra procura o furo e traz insights que eu não tinha. Decido com as respostas lado a lado.</span></div>
-    <div><b>Skills próprias</b><span>Escrevi skills que ensinam o Claude a executar processos do meu jeito: descoberta de nicho, criação de POP, operação do cérebro com Git, correção de texto por rubrica e análises com agentes em paralelo.</span></div>
-    <div><b>Repositórios</b><span>Um repositório por projeto, cérebro versionado em Git, segredos sempre fora do código e commits que descrevem a decisão, não o arquivo. Os de clientes e da E&amp;L ficam privados.</span></div>
+  <div class="grid3">
+    <article class="proj">
+      <div class="ph"><h3>Agente certo por tarefa</h3><span class="chip live">Em uso</span></div>
+      <div class="body">
+        <p><span class="lbl">Problema</span>Nenhum modelo é o melhor em tudo.</p>
+        <p><span class="lbl">Solução</span>Divido o trabalho entre Claude Code, Codex, Ollama e Kimi conforme o tipo de tarefa. Estou montando uma IA local com Ollama e participo do projeto de IA própria da E&amp;L.</p>
+        <div class="tools"><span>Claude Code</span><span>Codex</span><span>Ollama</span><span>Kimi</span></div>
+      </div>
+    </article>
+    <article class="proj">
+      <div class="ph"><h3>Estação de IA 24/7</h3><span class="chip live">Em uso</span></div>
+      <div class="body">
+        <p><span class="lbl">Problema</span>Projetos parados sempre que eu saía do computador.</p>
+        <p><span class="lbl">Solução</span>Máquina sempre ligada. Peço a tarefa pelo Telegram, o agente aciona o Claude Code, executa e versiona o resultado no Git/GitHub.</p>
+        <div class="tools"><span>Claude Code</span><span>Telegram</span><span>Git/GitHub</span></div>
+      </div>
+    </article>
+    <article class="proj">
+      <div class="ph"><h3>Hub-and-spoke</h3><span class="chip live">Em uso</span></div>
+      <div class="body">
+        <p><span class="lbl">Problema</span>Chat longo mistura assuntos e perde contexto.</p>
+        <p><span class="lbl">Solução</span>Um chat central do Claude recebe a demanda e distribui para chats especializados por meio de skills, todos lendo o mesmo cérebro.</p>
+        <div class="tools"><span>Claude</span><span>Skills</span><span>MCP</span></div>
+      </div>
+    </article>
   </div>
-</section>
 
-<footer>Estudo Análise e Desenvolvimento de Sistemas na UniBF. Sem código, dados ou nomes de clientes da E&amp;L nesta página. Atualizado em nov/2026.</footer>
+  <div class="sec-h"><h2>Meu sistema de trabalho com IA</h2></div>
+  <div class="how two">
+    <div><b>Segundo cérebro</b><p>Um vault em Markdown com o contexto de todos os meus projetos: decisões, estado de cada frente e processos. Toda sessão de IA começa lendo o cérebro e termina gravando o que mudou, então o contexto não morre com o chat.</p></div>
+    <div><b>Várias IAs no mesmo problema</b><p>Antes de construir, passo a ideia por Claude, Codex, Kimi e Ollama: uma propõe, outra critica, outra procura o furo e traz insights que eu não tinha. Decido com as respostas lado a lado.</p></div>
+    <div><b>Skills próprias</b><p>Escrevi skills que ensinam o Claude a executar processos do meu jeito: descoberta de nicho, criação de POP, operação do cérebro com Git, correção de texto por rubrica e análises com agentes em paralelo.</p></div>
+    <div><b>Repositórios</b><p>Um repositório por projeto, cérebro versionado em Git, segredos sempre fora do código e commits que descrevem a decisão, não o arquivo. Os de clientes e da E&amp;L ficam privados.</p></div>
+  </div>
 
+  <footer><span>ARTHUR MAGALHÃES · AI BUILDER</span><span>Estudo ADS na UniBF · atualizado em nov/2026</span></footer>
 </div>
+
 </body>
 </html>
